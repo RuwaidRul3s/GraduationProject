@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "147224308490",
+    "project_id": "stonefireplace-22164",
+    "storage_bucket": "stonefireplace-22164.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147224308490:android:f20549fc7eb2526ea0e8f3",
+        "android_client_info": {
+          "package_name": "com.example.stonefireplace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147224308490-3gleecq85bh1l233nk34g65depln7vdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiXs4uZ1SghhzKJX9R0sxCmKn7rF8EBc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147224308490-3gleecq85bh1l233nk34g65depln7vdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

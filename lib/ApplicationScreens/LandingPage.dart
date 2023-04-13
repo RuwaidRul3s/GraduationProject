@@ -3,9 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:stonefireplace/Widgets/ApplicationMainBackGround.dart';
+import 'package:stonefireplace/ApplicationScreens/LoginPage.dart';
+class StoneFirePlace extends StatefulWidget {
 
-class StoneFirePlace extends StatelessWidget {
+  static const  String ScreenID='LandingPage';
   const StoneFirePlace({Key? key}) : super(key: key);
+
+  @override
+  State<StoneFirePlace> createState() => _StoneFirePlaceState();
+}
+
+class _StoneFirePlaceState extends State<StoneFirePlace> with SingleTickerProviderStateMixin{
+
+  Color _IconColor=Colors.white;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,17 +56,23 @@ class StoneFirePlace extends StatelessWidget {
                   ),
                   Center(
                       child: GestureDetector(
-                      onVerticalDragStart: (detials){
-                        print("swipe up");
-                      },
+
+                          onHorizontalDragEnd: (DragEndDetails details){
+                            setState(() {
+                              _IconColor= Color.fromARGB(255, 194, 87, 26);
+                            });
+                            Navigator.pushNamed(context, LoginScreen.ScreenID);
+                          },
                           child: Icon(Icons.keyboard_double_arrow_up_sharp,
-                              color: Colors.white, size: 64))),
+                              color:_IconColor, size: 64))),
                 ],
               ),
             )
           ],
         ))),
       ),
+
+
     );
   }
 }
