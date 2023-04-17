@@ -13,6 +13,7 @@ import 'package:stonefireplace/ApplicationScreens/LandingPage.dart';
 import 'package:stonefireplace/ApplicationScreens/LoginPage.dart';
 import 'package:stonefireplace/ApplicationScreens/LoginWithPhone.dart';
 import 'package:stonefireplace/GoogleSigninProvider.dart';
+import 'package:stonefireplace/ApplicationScreens/LoginWithEmail.dart';
 // this is the starting point for the application
 
 Future   main() async {
@@ -24,12 +25,13 @@ Future   main() async {
     ChangeNotifierProvider(
       create: (context)=>GoogleSignInProvider(),
       child:  MaterialApp(
-        initialRoute: HomeScreen.ScreenID,
+        initialRoute: LoginWithEmail.ScreenID,
         routes: {
           StoneFirePlace.ScreenID:(context)=>StoneFirePlace(),
           LoginScreen.ScreenID:(context)=>LoginScreen(),
           LoginWithPhoneNumber.ScreenID:(context)=>LoginWithPhoneNumber(),
           HomeScreen.ScreenID:(context)=>HomeScreen(),
+          LoginWithEmail.ScreenID:(context)=>LoginWithEmail(),
         },
       )),
     );

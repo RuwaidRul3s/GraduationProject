@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "147224308490",
-    "project_id": "stonefireplace-22164",
-    "storage_bucket": "stonefireplace-22164.appspot.com"
+    "project_number": "234030725005",
+    "project_id": "graduationproject-18e69",
+    "storage_bucket": "graduationproject-18e69.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:147224308490:android:f20549fc7eb2526ea0e8f3",
+        "mobilesdk_app_id": "1:234030725005:android:cdc471b7cd7d475ae3efc4",
         "android_client_info": {
           "package_name": "com.example.stonefireplace"
         }
       },
       "oauth_client": [
         {
-          "client_id": "147224308490-3gleecq85bh1l233nk34g65depln7vdb.apps.googleusercontent.com",
+          "client_id": "234030725005-vun4kk5kvff6ibdutdcmngo9irkc6hos.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stonefireplace",
+            "certificate_hash": "bffbf94e4a766e91326da81d4b207796ee373868"
+          }
+        },
+        {
+          "client_id": "234030725005-dkc52e17k24303pn25ulomngq789r5tc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDiXs4uZ1SghhzKJX9R0sxCmKn7rF8EBc8"
+          "current_key": "AIzaSyA6xwTnaR_DdXr9M9JrHU3ncySEdJK1qCw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "147224308490-3gleecq85bh1l233nk34g65depln7vdb.apps.googleusercontent.com",
+              "client_id": "234030725005-5p94ikrpb6pdmv91tgcjbpsbdofidvo4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
