@@ -2,9 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-
 import 'package:stonefireplace/Widgets/ApplicationButton.dart';
 import 'package:stonefireplace/Widgets/ApplicationFormHeader.dart';
+
+import 'package:stonefireplace/ApplicationScreens/HomeScreen.dart';
+
+import '../ApplicationScreens/LoginPage.dart';
+
 class LoginWithEmailForm extends StatefulWidget {
   const LoginWithEmailForm({Key? key}) : super(key: key);
 
@@ -13,8 +17,10 @@ class LoginWithEmailForm extends StatefulWidget {
 }
 
 class _LoginWithEmailFormState extends State<LoginWithEmailForm> {
-  final   email=TextEditingController();
-  final   password=TextEditingController();
+  final _auth = FirebaseAuth.instance;
+
+  var Email_Address;
+  var password;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +28,16 @@ class _LoginWithEmailFormState extends State<LoginWithEmailForm> {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 20),
         child: Form(
-
           child: Padding(
             padding: EdgeInsets.all(40),
             child: Column(
               children: [
-                FormHeader(HeaderText:'Login With Email'),
+                FormHeader(HeaderText: 'Login With Email'),
                 TextFormField(
-                controller:email ,
+                  onChanged: (value) {
+                    Email_Address = value;
+                  },
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.zero,
                       floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -43,25 +51,20 @@ class _LoginWithEmailFormState extends State<LoginWithEmailForm> {
                       ),
                       enabledBorder: OutlineInputBorder(
                           borderSide:
-                          BorderSide(width: 2, color: Colors.white)),
+                              BorderSide(width: 2, color: Colors.white)),
                       focusedBorder: OutlineInputBorder(
                           borderSide:
-                          BorderSide(width: 2, color: Colors.white))),
+                              BorderSide(width: 2, color: Colors.white))),
                 ),
                 SizedBox(
                   height: 30,
                 ),
-
                 SizedBox(
                   height: 30,
                 ),
                 TextFormField(
-              controller: password,
-                  validator: (value) {
-                    if (value == null || value.isEmpty || value.length < 6) {
-                      return "password lenght < 6 ";
-                    }
-                    return null;
+                  onChanged: (value) {
+                    password = value;
                   },
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.zero,
@@ -76,25 +79,33 @@ class _LoginWithEmailFormState extends State<LoginWithEmailForm> {
                       ),
                       enabledBorder: OutlineInputBorder(
                           borderSide:
-                          BorderSide(width: 2, color: Colors.white)),
+                              BorderSide(width: 2, color: Colors.white)),
                       focusedBorder: OutlineInputBorder(
                           borderSide:
-                          BorderSide(width: 2, color: Colors.white))),
+                              BorderSide(width: 2, color: Colors.white))),
                 ),
                 SizedBox(
                   height: 30,
                 ),
                 ApplicationButton(
                     ButtonText: 'Submit',
-                    On_press_function: () async
-    {
-                      UserCredential userCredentials= await FirebaseAuth.instance.
-      createUserWithEmailAndPassword(email:email.text.trim(), password: password.text.trim());
-              await FirebaseAuth.instance.currentUser!.updateDisplayName('Ruwaid');
-                      await FirebaseAuth.instance.currentUser!.updateEmail('toxicinteger@gmail.com');
-               await FirebaseFirestore.instance.collection('users').doc("201820118").set({'email':'toxicinteger@gmail.com','name':'Ruwaid'});
+                    On_press_function: () async {
+                      try {
+                        final New_User = await _auth
+                            .createUserWithEmailAndPassword(
+                            email: Email_Address, password: password);
+                        if(New_User!=null)
+                          {
 
-    },
+                             Navigator.pushNamed(context,HomeScreen.ScreenID);
+
+
+                          }
+                      }
+                     catch(e){
+                       print(e);
+                      }
+                    },
                     ButtonColor: Colors.black,
                     ButtonStyle: TextStyle(fontSize: 14, color: Colors.white)),
                 SizedBox(
@@ -103,12 +114,12 @@ class _LoginWithEmailFormState extends State<LoginWithEmailForm> {
                 RichText(
                   text: TextSpan(
                       text:
-                      'If you have an account already , you can  login using existing account by pressing',
+                          'Or you can login with other sign in options by pressing',
                       style: TextStyle(
                           fontSize: 14, color: Color.fromARGB(255, 98, 93, 93)),
                       children: [
                         TextSpan(
-                            text: ' Login',
+                            text: ' sigin other options',
                             style: TextStyle(
                                 fontSize: 14,
                                 color: Colors.white,

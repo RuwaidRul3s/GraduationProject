@@ -1,12 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:stonefireplace/ApplicationScreens/OTP_Screen.dart';
 import 'package:stonefireplace/Widgets/ApplicationButton.dart';
 import 'package:stonefireplace/Widgets/ApplicationFormHeader.dart';
 
 class ApplicationForm extends StatefulWidget {
   const ApplicationForm({Key? key,required this.FormHeader_Text}) : super(key: key);
   final String FormHeader_Text;
+  static String verify="";
   @override
   State<ApplicationForm> createState() => _ApplicationFormState();
 }
@@ -111,7 +113,10 @@ class _ApplicationFormState extends State<ApplicationForm> {
                             phoneNumber:PhoneNumber,
                             verificationCompleted: (PhoneAuthCredential credential) {},
                             verificationFailed: (FirebaseAuthException e) {},
-                            codeSent: (String verificationId, int? resendToken) {},
+                            codeSent: (String verificationId, int? resendToken) {
+                              ApplicationForm.verify=verificationId;
+                              Navigator.pushNamed(context,OTP_Screen.ScreenID);
+                            },
                             codeAutoRetrievalTimeout: (String verificationId) {},
                           );
                         }

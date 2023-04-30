@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stonefireplace/ApplicationScreens/OTP_Screen.dart';
 import 'package:stonefireplace/Widgets/ApplicationForm.dart';
 class LoginWithPhoneNumber extends StatefulWidget {
 
@@ -14,6 +15,10 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+
+        OTP_Screen.ScreenID:(context)=>OTP_Screen(),
+      },
         home: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Color.fromARGB(255, 39, 17, 5),

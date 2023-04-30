@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
+import 'package:stonefireplace/ApplicationScreens/LoginWithEmail.dart';
+import 'package:stonefireplace/ApplicationScreens/LoginWithPhone.dart';
 import 'package:stonefireplace/Widgets/ApplicationMainBackGround.dart';
 import 'package:stonefireplace/Widgets/LoginBackgroundImage.dart';
 import 'package:stonefireplace/Widgets/ApplicationButton.dart';
@@ -80,6 +82,7 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
                       ButtonText: 'SING IN WITH Phone Number',
                       On_press_function: ()  {
 
+                        Navigator.pushNamed(context,  LoginWithPhoneNumber.ScreenID);
 
                       },
                       ButtonColor: Colors.black,
@@ -109,7 +112,7 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
                           ButtonStyle: TextStyle(fontSize: 16,color: Colors.white),
                           ButtonText: 'Email',
                           On_press_function: () {
-
+                            Navigator.pushNamed(context,LoginWithEmail.ScreenID);
                           },
                           ButtonColor: Color.fromARGB(255, 24, 119, 242),
                           ButtonIcon:FaIcon(FontAwesomeIcons.envelope,color: Colors.white,)

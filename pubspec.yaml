@@ -41,6 +41,7 @@ dependencies:
   font_awesome_flutter: ^10.4.0
   intl_phone_field: ^3.1.0
   cloud_firestore: ^4.5.1
+  pinput: ^1.1.0
 
 
 

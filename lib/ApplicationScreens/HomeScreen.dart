@@ -1,10 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stonefireplace/Drawer/Drawer_header.dart';
 import 'package:stonefireplace/Drawer/DrawerItem.dart';
 import 'package:stonefireplace/Widgets/ApplicationButton.dart';
 import 'package:stonefireplace/Base/Constants.dart';
 class HomeScreen extends StatefulWidget {
-  static const  String ScreenID='HomePage';
+  static const  String ScreenID='HomePageScreen';
+
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -12,6 +14,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final _auth=FirebaseAuth.instance;
+
+  void GetCurrentUser()
+  {
+
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
