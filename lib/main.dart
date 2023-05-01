@@ -1,7 +1,4 @@
 
-
-
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +23,7 @@ Future   main() async {
     ChangeNotifierProvider(
       create: (context)=>GoogleSignInProvider(),
       child:  MaterialApp(
-        initialRoute: StoneFirePlace.ScreenID,
+        initialRoute: LoginWithPhoneNumber.ScreenID,
         routes: {
           StoneFirePlace.ScreenID:(context)=>StoneFirePlace(),
           LoginScreen.ScreenID:(context)=>LoginScreen(),

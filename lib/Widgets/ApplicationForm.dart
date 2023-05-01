@@ -30,34 +30,8 @@ class _ApplicationFormState extends State<ApplicationForm> {
             child: Column(
               children: [
                 FormHeader(HeaderText:widget.FormHeader_Text),
-                TextFormField(
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Enter your Full Name";
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                      contentPadding: EdgeInsets.zero,
-                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                      filled: true,
-                      fillColor: Colors.white,
-                      label: Text('Full Name'),
-                      labelStyle: TextStyle(color: Colors.black),
-                      prefixIcon: Icon(
-                        Icons.person_outline_rounded,
-                        color: Colors.black,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(width: 2, color: Colors.white)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(width: 2, color: Colors.white))),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
+
+
                 IntlPhoneField(
                   onChanged: (value){
                    PhoneNumber= value.completeNumber;

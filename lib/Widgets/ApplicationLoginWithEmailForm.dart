@@ -96,14 +96,18 @@ class _LoginWithEmailFormState extends State<LoginWithEmailForm> {
                             email: Email_Address, password: password);
                         if(New_User!=null)
                           {
-
                              Navigator.pushNamed(context,HomeScreen.ScreenID);
-
-
                           }
                       }
                      catch(e){
-                       print(e);
+                        print(e);
+                      // show snakbar
+                       ScaffoldMessenger.of(context).showSnackBar(
+                         SnackBar(
+                         content:Text("The email address is already in use by another account.") ,
+
+                         )
+                       );
                       }
                     },
                     ButtonColor: Colors.black,
